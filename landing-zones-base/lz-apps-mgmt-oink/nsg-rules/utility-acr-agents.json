@@ -1,0 +1,72 @@
+[
+  {
+      "name": "AllowKeyVaultOutBound",
+      "properties": {
+          "description": "Allow KeyVault Access",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "443",
+          "destinationAddressPrefix": "AzureKeyVault",
+          "access": "Allow",
+          "priority": 100,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "AllowStorageOutBound",
+      "properties": {
+          "description": "Allow Storage Access",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "443",
+          "destinationAddressPrefix": "Storage",
+          "access": "Allow",
+          "priority": 110,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "AllowEventHubOutBound",
+      "properties": {
+          "description": "Allow EventHub Access",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "443",
+          "destinationAddressPrefix": "EventHub",
+          "access": "Allow",
+          "priority": 120,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "AllowAadOutBound",
+      "properties": {
+          "description": "Allow Azure Active Directory Access",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "443",
+          "destinationAddressPrefix": "AzureActiveDirectory",
+          "access": "Allow",
+          "priority": 130,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "AllowAzureMonitorBound",
+      "properties": {
+          "description": "Allow Azure Active Directory Access",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "443",
+          "destinationAddressPrefix": "AzureMonitor",
+          "access": "Allow",
+          "priority": 140,
+          "direction": "Outbound"
+      }
+  }
+]

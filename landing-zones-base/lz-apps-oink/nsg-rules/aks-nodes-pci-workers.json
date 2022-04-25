@@ -1,0 +1,16 @@
+[
+    {
+        "name": "DenySshInBound",
+        "properties": {
+            "description": "No SSH access allowed to nodes.",
+            "protocol": "TCP",
+            "sourcePortRange": "*",
+            "destinationPortRange": "22",
+            "sourceAddressPrefix": "*",
+            "destinationAddressPrefix": "*",
+            "access": "Deny",
+            "priority": 100,
+            "direction": "Inbound"
+        }
+    }
+]

@@ -1,0 +1,8 @@
+secrets:
+  - id: nugetKey
+    keyvault: https://oink-devops-config.vault.azure.net/secrets/oink-nuget-key
+
+steps:
+  - build: -t {{.Run.Registry}}/oink/financial-accounts-mgmt/accounts-api:{{.Run.ID}} --build-arg OINK_NUGET_KEY={{.Secrets.nugetKey}} -f Oink.FinancialAccountMgmt.Accounts.Api/Dockerfile .
+  - push:
+    - "{{.Run.Registry}}/oink/financial-accounts-mgmt/accounts-api:{{.Run.ID}}"

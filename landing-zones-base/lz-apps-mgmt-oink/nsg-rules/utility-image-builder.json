@@ -1,0 +1,114 @@
+[
+  {
+      "name": "AllowAzureLoadBalancer60001InBound",
+      "properties": {
+          "description": "Allows heath probe traffic to AIB Proxy VM on 60001 (SSH)",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "AzureLoadBalancer",
+          "destinationPortRange": "60001",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": 100,
+          "direction": "Inbound"
+      }
+  },
+  {
+      "name": "AllowVNet60001InBound",
+      "properties": {
+          "description": "Allows traffic from AIB Service PrivateLink to AIB Proxy VM",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "60001",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": 110,
+          "direction": "Inbound"
+      }
+  },
+  {
+      "name": "AllowVNet22InBound",
+      "properties": {
+          "description": "Allows Packer VM to receive SSH traffic from AIB Proxy VM",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "22",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": 120,
+          "direction": "Inbound"
+      }
+  },
+  {
+      "name": "DenyAllInBound",
+      "properties": {
+          "description": "Deny remaining traffic.",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationPortRange": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Deny",
+          "priority": 1000,
+          "direction": "Inbound"
+      }
+  },
+  {
+      "name": "Allow443ToInternetOutBound",
+      "properties": {
+          "description": "Allow VMs to communicate to Azure management APIs, Azure Storage, and perform install tasks.",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "443",
+          "destinationAddressPrefix": "Internet",
+          "access": "Allow",
+          "priority": 100,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "Allow80ToInternetOutBound",
+      "properties": {
+          "description": "Allow Packer VM to use apt-get to upgrade packages",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "80",
+          "destinationAddressPrefix": "Internet",
+          "access": "Allow",
+          "priority": 102,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "AllowSshToVNetOutBound",
+      "properties": {
+          "description": "Allow Proxy VM to communicate to Packer VM",
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "22",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": 110,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "DenyAllOutBound",
+      "properties": {
+          "description": "Deny all remaining outbound traffic",
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationPortRange": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Deny",
+          "priority": 1000,
+          "direction": "Outbound"
+      }
+  }
+]

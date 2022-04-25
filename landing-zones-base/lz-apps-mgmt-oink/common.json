@@ -1,0 +1,19 @@
+{
+  "appsMgmtRgName": "lz-apps-mgmt-oink",
+  "monitorMgmtRgName": "lz-mgmt-001",
+  "monitorMgmtPlsName": "oink-mgmt-monitoring-hub",
+  "acrRgName": "lz-connectivity-001",
+  "acrName": "colinmac",
+  "tags": {
+    "version": "1.0.0",
+    "partOf": "oink-apps-mgmt",
+    "channel": "Digital",
+    "department": "Retail Banking",
+    "productType": "Web",
+    "costCenterId": "7c96827a-dd1b-4119-b62d-f011ddd612c9"
+  },
+  "networkingTeamTags": {
+    "team": "Networking Ops",
+    "costCenter": "core-it"
+  }
+}

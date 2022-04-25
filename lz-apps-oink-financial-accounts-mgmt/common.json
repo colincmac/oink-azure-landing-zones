@@ -1,0 +1,16 @@
+{
+  "appsMgmtRgName": "lz-apps-mgmt-oink",
+  "monitorMgmtRgName": "lz-mgmt-001",
+  "monitorMgmtPlsName": "oink-mgmt-monitoring-hub",
+  "acrRgName": "lz-connectivity-001",
+  "acrName": "colinmac",
+  "tags": {
+    "version": "1.0.0",
+    "partOf": "financial-account-mgmt",
+    "channel": "Digital",
+    "department": "Retail Banking",
+    "productType": "Web",
+    "costCenterId": "7c96827a-dd1b-4119-b62d-f011ddd612c9"
+  },
+  "workspaceId": "/subscriptions/71db92d7-5d50-4033-8937-b5d2a6102f5e/resourcegroups/lz-apps-mgmt-oink/providers/microsoft.operationalinsights/workspaces/oink-apps-001"
+}

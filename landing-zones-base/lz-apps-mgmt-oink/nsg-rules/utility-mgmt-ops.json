@@ -1,0 +1,68 @@
+[
+  {
+      "name": "AllowSshFromHubBastionInBound",
+      "properties": {
+        "description": "Allow our Azure VPN users in.",
+        "protocol": "Tcp",
+        "sourcePortRange": "*",
+        "sourceAddressPrefix": "10.5.0.0/16",
+        "destinationPortRange": "22",
+        "destinationAddressPrefix": "*",
+        "access": "Allow",
+        "priority": 100,
+        "direction": "Inbound"
+    }
+  },
+  {
+      "name": "DenyAllInBound",
+      "properties": {
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationPortRange": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Deny",
+          "priority": 1000,
+          "direction": "Inbound"
+      }
+  },
+  {
+      "name": "Allow443InternetOutBound",
+      "properties": {
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationPortRange": "443",
+          "destinationAddressPrefix": "Internet",
+          "access": "Allow",
+          "priority": 100,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "Allow443VnetOutBound",
+      "properties": {
+          "protocol": "Tcp",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "VirtualNetwork",
+          "destinationPortRange": "443",
+          "destinationAddressPrefix": "VirtualNetwork",
+          "access": "Allow",
+          "priority": 110,
+          "direction": "Outbound"
+      }
+  },
+  {
+      "name": "DenyAllOutBound",
+      "properties": {
+          "protocol": "*",
+          "sourcePortRange": "*",
+          "sourceAddressPrefix": "*",
+          "destinationPortRange": "*",
+          "destinationAddressPrefix": "*",
+          "access": "Deny",
+          "priority": 1000,
+          "direction": "Outbound"
+      }
+  }
+]
