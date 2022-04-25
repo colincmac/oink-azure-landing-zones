@@ -17,7 +17,7 @@ Core infrastructure to support Data and App workloads in a secure Azure environm
 |[Helm Charts](https://github.com/colincmac/oink-helm-charts)|Helm charts to support GitOps scenarios|
 |[AKS GitOps - Core Platform](https://github.com/colincmac/aks-lz-manifests)|Flux multi-tenant configuration in AKS - Core Platform|
 |[AKS GitOps - Shared Services](https://github.com/colincmac/aks-lz-shared-services-manifests)|Flux multi-tenant configuration in AKS - Shared Services|
-|[Landing Zone IaC](https://github.com/colincmac/aks-lz-shared-services-manifests)|Flux multi-tenant configuration in AKS - Shared Services|
+|[Landing Zone IaC](https://github.com/colincmac/aks-lz-shared-services-manifests)| Bicep configuration of supporting Azure resources|
 
 ### Application Workloads
 
